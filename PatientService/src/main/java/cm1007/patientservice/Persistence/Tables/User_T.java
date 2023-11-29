@@ -32,16 +32,6 @@ public class User_T {
     @Column(name = "full_name")
     private String fullName;
 
-    @OneToMany
-    @JoinColumn(name = "id")
-    @Getter @Setter
-    private List<Message_T> messagesSource = new ArrayList<>();
-
-    @OneToMany
-    @JoinColumn(name = "id")
-    @Getter @Setter
-    private List<Message_T> messagesTarget = new ArrayList<>();
-
     //Necessary when using JPA
     public User_T() {
     }
