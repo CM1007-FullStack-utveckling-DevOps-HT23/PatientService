@@ -92,6 +92,16 @@ public class PatientSqlPersistence implements IPatientPersistence, IConditionPer
         return false;
     }
 
+    @Override
+    public boolean addPatient(Patient patient) {
+        if(patient != null) {
+            Patient_T p = new Patient_T(patient.id, patient.fullName);
+            _patientRepository.save(p);
+            return true;
+        }
+        return false;
+    }
+
     //------------------
 
 

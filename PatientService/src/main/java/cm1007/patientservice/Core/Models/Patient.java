@@ -25,9 +25,9 @@ public class Patient {
     public Patient(){
     }
 
-    public Patient(Long id, String uName){
+    public Patient(Long id, String fullName){
         this.id = id;
-        this.fullName = uName;
+        this.fullName = fullName;
     }
 
 

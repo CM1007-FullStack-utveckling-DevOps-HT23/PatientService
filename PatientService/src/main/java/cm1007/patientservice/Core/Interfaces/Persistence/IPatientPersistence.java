@@ -8,4 +8,5 @@ public interface IPatientPersistence {
     List<Patient> getAll();
     Patient get(Long patient_id);
     boolean addNote(Long patientId, String note);
+    boolean addPatient(Patient patient);
 }

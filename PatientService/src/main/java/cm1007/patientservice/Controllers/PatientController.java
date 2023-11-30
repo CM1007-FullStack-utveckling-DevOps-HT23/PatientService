@@ -65,17 +65,23 @@ public class PatientController {
 
     @PostMapping("/addNote/{patientId}")
     public ResponseEntity<String> addNote(@PathVariable Long patientId, @Valid @RequestBody CreateNoteVM note){
-
         if(_patientService.addNote(patientId, note.getNote()))
             return ResponseEntity.ok().build();
         return ResponseEntity.notFound().build();
     }
 
-    /*
-    @Postmapping("/add")
-    CREATE PATIENT BY CREATING A USER WITH PATIENT ROLE
-    HANDLED IN THE USER CONTROLLER INSTEAD
-     */
+
+    @PostMapping("/add")
+    public ResponseEntity<String> createPatient(@Valid @RequestBody PatientCreateVM patientVM) {
+        Patient p = new Patient(patientVM.id, patientVM.fullName);
+        boolean isPatientCreated = _patientService.addPatient(p);
+
+        if (isPatientCreated) {
+            return ResponseEntity.status(HttpStatus.CREATED).build(); // 201 Created for successful creation
+        } else {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build(); // 500 Internal Server Error for failure
+        }
+    }
 
     private PatientDetailsVM patientDetailsVMMapper(Patient patient){
         PatientDetailsVM result = new PatientDetailsVM(patient.id, patient.fullName);

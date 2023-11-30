@@ -28,4 +28,9 @@ public class PatientService implements IPatientService {
     public boolean addNote(Long patientId, String note) {
         return _patientPersistence.addNote(patientId, note);
     }
+
+    @Override
+    public boolean addPatient(Patient patient) {
+        return _patientPersistence.addPatient(patient);
+    }
 }
