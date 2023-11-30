@@ -1,9 +1,6 @@
 package cm1007.patientservice.Controllers;
 
-import cm1007.patientservice.Core.Interfaces.IConditionService;
-import cm1007.patientservice.Core.Interfaces.IEncounterService;
-import cm1007.patientservice.Core.Interfaces.IObservationService;
-import cm1007.patientservice.Core.Interfaces.IPatientService;
+import cm1007.patientservice.Core.Interfaces.*;
 import cm1007.patientservice.Core.Models.*;
 import cm1007.patientservice.ViewModels.*;
 import cm1007.patientservice.ViewModels.Condition.*;
