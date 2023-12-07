@@ -17,6 +17,10 @@ public class Encounter_T {
     @Getter
     private Long id;
 
+    @Column(name = "doctor_id")
+    @Getter @Setter
+    private Long doctorId;
+
     @ManyToOne
     @JoinColumn(name = "patient_id")
     @Getter @Setter

@@ -9,7 +9,7 @@ public class Note_T {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter @Setter
-    private long id;
+    private Long id;
 
     @Getter @Setter
     private String note;
