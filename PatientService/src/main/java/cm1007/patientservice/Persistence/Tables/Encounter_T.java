@@ -37,8 +37,9 @@ public class Encounter_T {
     public Encounter_T() {
     }
 
-    public Encounter_T(Patient_T patient, LocalDateTime encounterDate) {
+    public Encounter_T(Patient_T patient, LocalDateTime encounterDate, Long doctorId) {
         this.patient = patient;
         this.encounterDate = encounterDate;
+        this.doctorId = doctorId;
     }
 }

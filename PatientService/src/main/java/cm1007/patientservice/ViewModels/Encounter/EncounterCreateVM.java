@@ -11,6 +11,10 @@ public class EncounterCreateVM {
     @Getter @Setter
     public Long patientId;
 
+    @NotNull(message = "doctorId cannot be null")
+    @Getter @Setter
+    public Long doctorId;
+
     public EncounterCreateVM() {
     }
 }

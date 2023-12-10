@@ -17,6 +17,9 @@ public class Encounter {
     private Long patientId;
 
     @Getter @Setter
+    private Long doctorId;
+
+    @Getter @Setter
     private LocalDateTime encounterDate;
 
     @Getter @Setter
@@ -44,8 +47,9 @@ public class Encounter {
     }
 
     //Create encounter
-    public Encounter(Long patientId, LocalDateTime encounterDate) {
+    public Encounter(Long patientId, LocalDateTime encounterDate, Long doctorId) {
         this.patientId = patientId;
+        this.doctorId = doctorId;
         this.encounterDate = encounterDate;
     }
 

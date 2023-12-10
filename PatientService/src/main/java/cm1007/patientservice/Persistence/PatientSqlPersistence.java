@@ -145,7 +145,7 @@ public class PatientSqlPersistence implements IPatientPersistence, IConditionPer
         if(encounter != null) {
             Optional<Patient_T> patient = _patientRepository.findById(encounter.getPatientId());
             if(patient.isPresent()) {
-                Encounter_T e = new Encounter_T(patient.get(), encounter.getEncounterDate());
+                Encounter_T e = new Encounter_T(patient.get(), encounter.getEncounterDate(), encounter.getDoctorId());
                 _encounterRepository.save(e);
                 return true;
             }

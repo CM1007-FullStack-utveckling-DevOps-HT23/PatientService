@@ -140,7 +140,7 @@ public class PatientController {
     }
     @PostMapping("/encounter/add")
     public ResponseEntity<String> addEncounter(@Valid @RequestBody EncounterCreateVM encounterVM) {
-        Encounter e = new Encounter(encounterVM.patientId, LocalDateTime.now());
+        Encounter e = new Encounter(encounterVM.patientId, LocalDateTime.now(), encounterVM.doctorId);
         boolean isEncounterCreated = _encounterService.addEncounter(e);
         if (isEncounterCreated) {
             return ResponseEntity.status(HttpStatus.CREATED).build(); // 201 Created for successful creation
