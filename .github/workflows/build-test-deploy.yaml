@@ -21,7 +21,7 @@ jobs:
 
       - name: Build and Test
         run: |
-          cd UserService
+          cd PatientService
           mvn -B clean install
 
       - name: Log in to Docker Hub
