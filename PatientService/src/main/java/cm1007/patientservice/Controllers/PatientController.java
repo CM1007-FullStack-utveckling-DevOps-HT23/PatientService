@@ -17,9 +17,9 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@CrossOrigin
 @RestController
 @RequestMapping("/patient")
+@CrossOrigin(origins="https://frontend-service-dgrf.app.cloud.cbh.kth.se" ,allowCredentials = "true")
 public class PatientController {
 
     @Autowired
@@ -52,7 +52,7 @@ public class PatientController {
     }
 
     @GetMapping("/{patientId}")
-    public ResponseEntity<PatientDetailsVM> getPatient(@PathVariable Long patientId){
+    public ResponseEntity<PatientDetailsVM> getPatient(@PathVariable String patientId){
         Patient patient = _patientService.get(patientId);
         if(patient != null) {
             return ResponseEntity.ok(patientDetailsVMMapper(patient));
@@ -61,7 +61,7 @@ public class PatientController {
     }
 
     @PostMapping("/addNote/{patientId}")
-    public ResponseEntity<String> addNote(@PathVariable Long patientId, @Valid @RequestBody CreateNoteVM note){
+    public ResponseEntity<String> addNote(@PathVariable String patientId, @Valid @RequestBody CreateNoteVM note){
         if(_patientService.addNote(patientId, note.getNote()))
             return ResponseEntity.ok().build();
         return ResponseEntity.notFound().build();

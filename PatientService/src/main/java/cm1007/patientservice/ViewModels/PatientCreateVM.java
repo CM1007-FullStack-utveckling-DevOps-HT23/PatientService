@@ -6,9 +6,10 @@ import lombok.Getter;
 import lombok.Setter;
 
 public class PatientCreateVM {
+    @NotEmpty(message = "id is required")
     @NotNull(message = "id cannot be null")
     @Getter @Setter
-    public Long id;
+    public String id;
 
     @NotEmpty(message = "Full name is required")
     @NotNull(message = "Full name cannot be null")

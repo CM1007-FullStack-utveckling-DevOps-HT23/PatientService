@@ -10,12 +10,12 @@ public class ConditionVM {
     Long id;
 
     @Getter @Setter
-    Long patientId;
+    String patientId;
 
     @Getter @Setter
     String conditionType;
 
-    public ConditionVM(Long id, Long patientId, String conditionType) {
+    public ConditionVM(Long id, String patientId, String conditionType) {
         this.id = id;
         this.patientId = patientId;
         this.conditionType = conditionType;

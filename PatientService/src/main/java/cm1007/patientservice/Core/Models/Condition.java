@@ -11,7 +11,7 @@ public class Condition {
     private Long id;
 
     @Getter @Setter
-    private Long patientId;
+    private String patientId;
 
     @Getter @Setter
     private String conditionType;
@@ -23,14 +23,14 @@ public class Condition {
     }
 
     //Lazy loading
-    public Condition(Long id, Long patientId, String conditionType) {
+    public Condition(Long id, String patientId, String conditionType) {
         this.id = id;
         this.patientId = patientId;
         this.conditionType = conditionType;
     }
 
     //For creating
-    public Condition(Long patientId, String conditionType) {
+    public Condition(String patientId, String conditionType) {
         this.patientId = patientId;
         this.conditionType = conditionType;
     }

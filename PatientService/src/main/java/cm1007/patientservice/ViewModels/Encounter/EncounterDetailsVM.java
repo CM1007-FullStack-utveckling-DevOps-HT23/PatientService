@@ -14,7 +14,7 @@ public class EncounterDetailsVM {
     Long id;
 
     @Getter @Setter
-    Long patientId;
+    String patientId;
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @Getter @Setter
@@ -23,7 +23,7 @@ public class EncounterDetailsVM {
     @Getter @Setter
     List<ObservationVM> observations = new ArrayList<>();
 
-    public EncounterDetailsVM(Long id, Long patientId, LocalDateTime encounterDate) {
+    public EncounterDetailsVM(Long id, String patientId, LocalDateTime encounterDate) {
         this.id = id;
         this.patientId = patientId;
         this.encounterDate = encounterDate;

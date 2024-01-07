@@ -19,7 +19,7 @@ public class Encounter_T {
 
     @Column(name = "doctor_id")
     @Getter @Setter
-    private Long doctorId;
+    private String doctorId;
 
     @ManyToOne
     @JoinColumn(name = "patient_id")
@@ -37,7 +37,7 @@ public class Encounter_T {
     public Encounter_T() {
     }
 
-    public Encounter_T(Patient_T patient, LocalDateTime encounterDate, Long doctorId) {
+    public Encounter_T(Patient_T patient, LocalDateTime encounterDate, String doctorId) {
         this.patient = patient;
         this.encounterDate = encounterDate;
         this.doctorId = doctorId;

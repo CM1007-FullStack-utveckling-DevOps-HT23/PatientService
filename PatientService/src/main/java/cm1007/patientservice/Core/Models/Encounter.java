@@ -14,10 +14,10 @@ public class Encounter {
     private Long id;
 
     @Getter @Setter
-    private Long patientId;
+    private String patientId;
 
     @Getter @Setter
-    private Long doctorId;
+    private String doctorId;
 
     @Getter @Setter
     private LocalDateTime encounterDate;
@@ -32,7 +32,7 @@ public class Encounter {
     }
 
     //Eager load
-    public Encounter(Long id, Long patientId, LocalDateTime encounterDate, List<Observation> observations) {
+    public Encounter(Long id, String patientId, LocalDateTime encounterDate, List<Observation> observations) {
         this.id = id;
         this.patientId = patientId;
         this.encounterDate = encounterDate;
@@ -40,14 +40,14 @@ public class Encounter {
     }
 
     //Lazy load
-    public Encounter(Long id, Long patientId, LocalDateTime encounterDate) {
+    public Encounter(Long id, String patientId, LocalDateTime encounterDate) {
         this.id = id;
         this.patientId = patientId;
         this.encounterDate = encounterDate;
     }
 
     //Create encounter
-    public Encounter(Long patientId, LocalDateTime encounterDate, Long doctorId) {
+    public Encounter(String patientId, LocalDateTime encounterDate, String doctorId) {
         this.patientId = patientId;
         this.doctorId = doctorId;
         this.encounterDate = encounterDate;

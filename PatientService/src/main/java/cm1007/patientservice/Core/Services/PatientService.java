@@ -20,12 +20,12 @@ public class PatientService implements IPatientService {
     }
 
     @Override
-    public Patient get(Long patient_id) {
+    public Patient get(String patient_id) {
         return _patientPersistence.get(patient_id);
     }
 
     @Override
-    public boolean addNote(Long patientId, String note) {
+    public boolean addNote(String patientId, String note) {
         return _patientPersistence.addNote(patientId, note);
     }
 

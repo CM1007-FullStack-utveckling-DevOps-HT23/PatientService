@@ -11,13 +11,13 @@ public class EncounterVM {
     Long id;
 
     @Getter @Setter
-    Long patientId;
+    String patientId;
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @Getter @Setter
     LocalDateTime encounterDate;
 
-    public EncounterVM(Long id, Long patientId, LocalDateTime encounterDate) {
+    public EncounterVM(Long id, String patientId, LocalDateTime encounterDate) {
         this.id = id;
         this.patientId = patientId;
         this.encounterDate = encounterDate;

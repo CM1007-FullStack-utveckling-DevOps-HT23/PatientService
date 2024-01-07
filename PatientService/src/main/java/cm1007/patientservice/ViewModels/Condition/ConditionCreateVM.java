@@ -7,8 +7,9 @@ import lombok.Setter;
 
 public class ConditionCreateVM {
     @NotNull(message = "patientId cannot be null")
+    @NotEmpty(message = "patientId is required")
     @Getter @Setter
-    public Long patientId;
+    public String patientId;
 
     @NotEmpty(message = "conditionType is required")
     @NotNull(message = "conditionType cannot be null")

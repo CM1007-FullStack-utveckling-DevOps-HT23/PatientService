@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Patient {
     @Getter @Setter
-    public Long id;
+    public String id;
 
     @Getter @Setter
     public String fullName;
@@ -25,7 +25,7 @@ public class Patient {
     public Patient(){
     }
 
-    public Patient(Long id, String fullName){
+    public Patient(String id, String fullName){
         this.id = id;
         this.fullName = fullName;
     }

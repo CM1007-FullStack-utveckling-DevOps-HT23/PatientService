@@ -48,7 +48,7 @@ public class PatientSqlPersistence implements IPatientPersistence, IConditionPer
     }
 
     //Fat eager load
-    public Patient get(Long patient_id){
+    public Patient get(String patient_id){
         Patient_T patient = _patientRepository.findPatientEager(patient_id);
         if(patient != null) {
             Patient p = new Patient(patient.getId(), patient.getFullName());
@@ -78,7 +78,7 @@ public class PatientSqlPersistence implements IPatientPersistence, IConditionPer
 
     @Transactional
     @Override
-    public boolean addNote(Long patientId, String note) {
+    public boolean addNote(String patientId, String note) {
         if(patientId == null || note == null)
             return false;
         Optional<Patient_T> patient = _patientRepository.findById(patientId);

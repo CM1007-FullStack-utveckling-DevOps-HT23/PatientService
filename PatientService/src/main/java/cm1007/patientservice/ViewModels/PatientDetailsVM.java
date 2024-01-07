@@ -11,7 +11,7 @@ import java.util.List;
 
 public class PatientDetailsVM {
     @Getter @Setter
-    public Long patientId;
+    public String patientId;
 
     @Getter @Setter
     public String patientName;
@@ -25,7 +25,7 @@ public class PatientDetailsVM {
     @Getter @Setter
     public List<NoteVM> notes = new ArrayList<>();
 
-    public PatientDetailsVM(Long patientId, String patientName) {
+    public PatientDetailsVM(String patientId, String patientName) {
         this.patientId = patientId;
         this.patientName = patientName;
     }
